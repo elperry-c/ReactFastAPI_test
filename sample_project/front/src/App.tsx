@@ -1,21 +1,17 @@
-import React from "react";
-import axios from "axios";
+import { BrowserRouter } from "react-router-dom";
+import { PersistentDrawerLeft } from "./module/PageLayout";
+import { SideMenu } from "./module/SideMenu";
+import { MainContents } from "./module/MainContents";
 
-function App() {
-  const [data, setData] = React.useState();
-  const url = "http://127.0.0.1:8080";
-
-  const GetData = () => {
-    axios.get(url).then((res) => {
-      setData(res.data);
-    });
-  };
-  return (
-    <div>
-      <div>ここに処理を書いていきます</div>
-      {data ? <div>{(data as any).message}</div> : <button onClick={GetData}>データを取得</button>}
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <BrowserRouter>
+            <PersistentDrawerLeft
+                sideMenu={<SideMenu />}
+                mainContent={<MainContents />}
+            />
+        </BrowserRouter>
+    );
+};
 
 export default App;
