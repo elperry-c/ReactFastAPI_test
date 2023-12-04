@@ -1,4 +1,9 @@
 /**
+ * @module Fetch.tsx
+ * @author S.Utsumi
+ */
+
+/**
  * Fetch API
  * @function
  * @async
@@ -29,7 +34,7 @@ export const FetchReq = async (url: string, method: string, body: string | null 
 /**
  * @function
  * @async
- * @param {string} url:  リクエストURL
+ * @param {string} url - リクエストURL
  * @returns  {*}
  */
 export const GetJsonReq = async (url: string) => {
